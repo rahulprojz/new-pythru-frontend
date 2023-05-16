@@ -1,0 +1,173 @@
+@import "../../../scss/mixin";
+
+.main_container {
+    width: 100%;
+
+    .menuBar {
+        .MuiDrawer-paper {
+            width: size(260);
+            top: size(79);
+            height: calc(100% - size(79));
+            padding-bottom: size(70);
+            overflow: hidden;
+            @include for-medium-desktop{
+                width: size(250);
+            }
+            .MuiList-root {
+                max-height: calc(100vh - 149px);
+                overflow-x: hidden !important;
+                overflow: auto;
+                @include for-medium-desktop {
+                    max-height: calc(100vh - 138px);
+                }
+            }
+            @include for-medium-desktop {
+                top: size(62);
+                height: calc(100% - size(62));
+            }
+
+            &::before {
+                @include beforeBl;
+                position: fixed;
+                background-color: var(--bs-white);
+                width: size(259);
+                height: size(70);
+                z-index: 1;
+                @include transition(width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms);
+                @include for-medium-desktop{
+                    width: size(239);
+                }
+            }
+        }
+    }
+
+    main {
+        min-height: calc(100vh - size(79));
+        padding-left: size(290);
+        padding-top: size(100);
+        @include transition(all 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms);
+        
+        @include for-medium-desktop {
+            padding-top: 75px;
+            padding-left: size(270);
+            padding-right: size(20);
+        }
+        @include for-medium-tablet {
+            padding-left: 6.25rem;
+        }
+
+        @include for-medium-tablet {
+            padding-left: size(20);
+            padding-right: size(20);
+        }
+        @media screen and (max-width: 576px) {
+            padding-left: size(15);
+            padding-right: size(15);
+        }
+    }
+
+    &.collapsed {
+        .MuiDrawer-root {
+            .nvBx {
+                .MuiTypography-subtitle2 {
+                    opacity: 0;
+                }
+
+                .MuiListItemIcon-root {
+                    margin-right: 0;
+                }
+
+                .nv_icon {
+                    opacity: 0;
+                }
+            }
+
+            .MuiCollapse-entered {
+                display: none;
+            }
+
+            .MuiDrawer-paper {
+                @include for-medium-tablet {
+                    width: 0;
+                }
+            }
+
+            .listContainer {
+                > .MuiListItem-root {
+                    &:last-child {
+                        width: size(69);
+                    }
+                }
+            }
+        }
+
+        .menuBar {
+            .MuiDrawer-paper {
+                width: size(70);
+                @media screen and (max-width: 992px) {
+                    width: 0px;
+                }
+                &::before {
+                    width: size(69);
+                    @media screen and (max-width: 992px) {
+                        width: 0px;
+                    }
+                }
+            }
+        }
+        .ar_nv {
+            img {
+                transform: none;
+            }
+        }
+
+        main {
+            padding-left: size(90);
+            @include transition(all 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms);
+
+            @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+                padding-left: size(45);
+            }
+
+            @include for-medium-tablet {
+                padding-left: size(20);
+                padding-right: size(20);
+            }
+            @media screen and (max-width: 576px) {
+                padding-left: size(15);
+                padding-right: size(15);
+            }
+        }
+
+        .lg_wrap {
+            width: size(70);
+
+            a {
+                overflow: hidden;
+
+                .lgb {
+                    opacity: 0;
+                }
+
+                .lgsm {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .navi_dp {
+            width: 70px;
+            .MuiTypography-subtitle2{
+                display: none;
+            }
+            @include for-medium-tablet {
+                display: none !important;
+            }
+        }
+    }
+    .navi_dp {
+        @include for-medium-tablet {
+            display: block !important;
+        }
+    }
+}

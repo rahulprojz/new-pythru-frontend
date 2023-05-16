@@ -1,0 +1,16 @@
+@import "../../../scss/mixin";
+
+.searchInput {
+  width: 100%;
+}
+
+.closeIcon {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  @include for-mobile-device {
+    width: 15px;
+  }
+}

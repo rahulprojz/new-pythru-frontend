@@ -1,0 +1,197 @@
+@import "../../scss/mixin";
+
+.btn {
+  width: auto;
+  font-size: size(18) !important;
+  padding-left: size(30) !important;
+  padding-right: size(30) !important;
+  border: 0;
+  font-weight: 600 !important;
+  font-family: var(--bs-body-font-family);
+  border: none !important;
+  text-transform: uppercase;
+  @include box-shadow(none);
+  height: size(50);
+  border-radius: size(10) !important;
+  min-height: auto !important;
+
+  @include for-medium-desktop {
+    font-size: size(13) !important;
+    height: size(40);
+    padding-left: size(18) !important;
+    padding-right: size(18) !important;
+  }
+
+  @include for-medium-tablet {
+    font-size: size(12) !important;
+    height: size(34);
+    padding-left: size(15) !important;
+    padding-right: size(15) !important;
+  }
+
+  @include for-mobile-device {
+    font-size: size(11) !important;
+    height: size(30);
+    padding-left: size(10) !important;
+    padding-right: size(10) !important;
+    border-radius: 6px !important;
+  }
+
+  @include for-small-mobile-device {
+    font-size: size(10) !important;
+    height: size(26);
+    padding-left: size(8) !important;
+    padding-right: size(8) !important;
+  }
+
+  &.btn-onboarding {
+    width: 300px !important;
+    max-width: 100%;
+    margin: auto;
+    background: var(--bs-btn-gradient);
+    color: var(--bs-white) !important;
+    display: block;
+    font-size: size(24) !important;
+    height: size(70);
+
+    @include for-medium-desktop {
+      font-size: size(20) !important;
+      height: size(60);
+    }
+
+    @include for-medium-tablet {
+      font-size: size(16) !important;
+      height: size(50);
+    }
+
+    @include for-mobile-device {
+      font-size: size(14) !important;
+      height: size(44);
+    }
+
+    @include for-small-mobile-device {
+      font-size: size(12) !important;
+      height: size(36);
+    }
+  }
+
+  &.btn-purple {
+    background: var(--bs-btn-gradient) !important;
+    color: var(--bs-white) !important;
+  }
+
+  &.btn-purple-border {
+    background: var(--bs-white) !important;
+    border: 1px solid var(--bs-switch-bg) !important;
+    color: var(--bs-switch-bg) !important;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    &:hover {
+      box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+    }
+  }
+
+  &.btn-simple {
+    background: #f3f3f3 !important;
+    color: var(--bs-black) !important;
+  }
+
+  &.buttonWithIcon {
+    background: var(--bs-btn-gradient);
+    color: var(--bs-white) !important;
+    &.c-purple {
+      color: var(--bs-nav-color) !important;
+    }
+
+    @include for-medium-tablet {
+      padding: size(7) size(25) !important;
+
+      img {
+        max-height: 22px;
+      }
+    }
+
+    @include for-mobile-device {
+      padding: size(6) size(20) !important;
+
+      img {
+        max-height: 19px;
+      }
+    }
+
+    @include for-small-mobile-device {
+      padding: size(5) size(12) !important;
+
+      img {
+        max-height: 16px;
+      }
+    }
+  }
+
+  &.btn-download {
+    border: 0;
+    min-width: auto;
+    padding: 0px !important;
+    width: size(50);
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    margin-left: size(15);
+    min-width: auto !important;
+
+    @include for-medium-desktop {
+      width: size(40);
+    }
+
+    @include for-medium-tablet {
+      width: size(34);
+    }
+
+    @include for-mobile-device {
+      width: size(30);
+    }
+
+    @include for-small-mobile-device {
+      width: size(26);
+    }
+
+    img {
+      width: 22px;
+      @include for-small-mobile-device {
+        width: size(15);
+      }
+    }
+
+    .MuiButton-endIcon {
+      display: none;
+    }
+
+    .MuiButton-startIcon {
+      margin: 0;
+    }
+  }
+
+  &.light-color {
+    background-color: #f3f3f3;
+    color: black;
+  }
+
+  &.less-radius {
+    border-radius: 10px;
+  }
+
+  &.w-auto {
+    width: auto !important;
+  }
+
+  &.h-auto {
+    height: auto !important;
+  }
+}
+
+.MuiButtonBase-root {
+  letter-spacing: normal;
+
+  &.Mui-disabled {
+    opacity: 0.3;
+  }
+}

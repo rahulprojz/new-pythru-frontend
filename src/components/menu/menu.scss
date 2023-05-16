@@ -1,0 +1,23 @@
+@import '../../scss/mixin';
+.dynamic-menu {
+    margin-top: 10px;
+    @include for-mobile-device{
+        margin-top: 0px;
+    }
+    button {
+        min-width: 30px;
+        border: 1px solid var(--bs-border) !important;
+        border-radius: 50% !important;
+        padding: 0px !important;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--bs-filter-checklabel) !important;
+        &.disable {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    }
+}

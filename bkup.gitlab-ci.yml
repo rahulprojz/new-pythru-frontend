@@ -1,0 +1,49 @@
+stages:
+  - build
+  - deploy
+
+build:
+  image: node:16.15
+  stage: build
+  script:
+    - node -v
+    - npm -v
+    - ls -la
+    - npm cache clean --force
+    - npm cache verify
+    - npm i --force
+    - npm i -g react
+    - npm run build
+    #- ng --version
+    - tar -czf pythru_web_artifact.tar.gz .env dist
+  artifacts:
+    paths:
+      - pythru_web_artifact.tar.gz
+    expire_in: 1 hrs 00 min
+  only:
+    - dev
+    - qa
+
+deploy:
+  stage: deploy
+  before_script:
+    - apk update && apk add openssh-client bash
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H $DEPLOY_SERVER_IP >> ~/.ssh/known_hosts
+    
+  script:
+    - echo "Delploying project..."
+    - pwd
+    - ls -la
+    #- ssh ubuntu@$DEPLOY_SERVER_IP -vvv 'date'
+    #- echo "$flag"
+    - if [ "$CI_COMMIT_BRANCH" == "dev" ]; then scp -rp pythru_web_artifact.tar.gz pythruapi_usr@$DEPLOY_SERVER_IP:/var/www/html/pythru/dev/web_app/  && ssh pythruapi_usr@$DEPLOY_SERVER_IP 'bash' < ./scripts/start_dev.sh; fi
+    - if [ "$CI_COMMIT_BRANCH" == "qa" ];then scp -rp pythru_web_artifact.tar.gz pythruapi_usr@$DEPLOY_SERVER_IP:/var/www/html/pythru/qa/web_app/ && ssh pythruapi_usr@$DEPLOY_SERVER_IP 'bash' < ./scripts/start_qa.sh; fi
+    - echo "Deployment complete."
+  only:
+    - dev
+    - qa

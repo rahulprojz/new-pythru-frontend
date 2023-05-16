@@ -1,0 +1,72 @@
+// @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap");
+
+/* Theme color */
+
+:root {
+  --bs-red: #d32f2f;
+  --bs-orange: #ff9f0c;
+  --bs-yellow: #f9e80d;
+  --bs-green: #1ecc33;
+  --bs-white: #ffffff;
+  --bs-black: #000000;
+  --bs-bar: #f8f9fa;
+  --bs-gray: #c5c6cb;
+  --bs-nav-icon: #f4f4f4;
+  --bs-gray-txt: #949494;
+  --bs-shadow: 0px 20px 50px rgba(132, 39, 225, 0.2);
+  --bs-error-filed: rgb(211 47 47 / 13%);
+  --bs-field-shadow: rgba(132, 39, 225, 0.2);
+  --bs-tooltip-shadow: rgba(154, 154, 154, 0.2);
+  --bs-breadcrum-shadow: rgba(185, 185, 185, 0.25);
+  --bs-primary: #7a009e;
+  --bs-secondary: #0019dc;
+  --bs-nav-color: #3c00f2;
+  --bs-input-bg: #f3f2f1;
+  --bs-warning: #ff9f0c;
+  --bs-danger: #e85858;
+  --bs-pending: #ffb11b;
+  --bs-success: #17d1af;
+  --bs-paid-green: #19d1af;
+  --bs-border: #b5b5b5;
+  --bs-font-tertiary: #2a262c;
+  --bs-secondary-black: #171b2f;
+  --bs-graphic-color: linear-gradient(180deg, #ffd572 0%, #febd38 100%);
+  --bs-btn-gradient: linear-gradient(
+    90deg,
+    #8a2be2 0.2%,
+    #8427e1 23.3%,
+    #741cdd 52.43%,
+    #5909d7 86.58%,
+    #4b00d4 100.64%
+  );
+  --bs-btn-shadow: linear-gradient(180deg, #7ad3ff 0%, #4fbaf0 100%);
+  --bs-bank-interest: linear-gradient(180deg, #7ad3ff 0%, #4fbaf0 100%);
+  --bs-profit-on-sale: linear-gradient(180deg, #ffd572 0%, #febd38 100%);
+  // --bs-body-font-family: "Lato", sans-serif;
+  --bs-body-font-family: "Poppins", sans-serif;
+  --bs-body-font-size: 0.875rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #f6f8fa;
+  --bs-bg-opacity: 0.05;
+  --bs-border-opacity: 0.3;
+  --bs-error-border-color: #ff3f4f;
+  --bs-table-header: #f8f9fa;
+  --bs-text-color: #ffffff;
+  --bs-low-stock: #ff9913;
+  --bs-out-of-stock: #f0142f;
+  --bs-stock-bg: #efefef;
+  --bs-cellhead: #111f72;
+  --bs-cellbody: #000b45;
+  --bs-switch-bg: #6f4ef2;
+  --bs-cencel: #f3f3f3;
+  --bs-input-border: #c4c4c4;
+  --bs-table-dot: #ecf0f8;
+  --bs-resend-disable: #5d5fef;
+  --bs-filter-checklabel: #8b8e97;
+  --bs-img-border: #eaeaea;
+  --bs-tb-active: rgba(1, 188, 130, 0.1);
+  --bs-tb-inacctive: rgba(248, 204, 209, 0.4);
+  --bs-ls-blue: #5910ec;
+}

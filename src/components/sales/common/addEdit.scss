@@ -1,0 +1,108 @@
+@import "../../../scss/mixin";
+
+.add-edit-form {
+  .MuiTable-root {
+    .MuiTableRow-head {
+      background: var(--bs-table-header) !important;
+
+      .MuiTableCell-root {
+        color: #757575;
+        font-size: size(14);
+        border-bottom: none;
+        white-space: nowrap;
+        @include for-medium-desktop{
+          padding: size(12) size(7);
+        }
+      }
+    }
+
+    .MuiTableBody-root {
+      .MuiTableRow-root {
+        .MuiTableCell-root {
+          padding: size(25) size(15);
+          vertical-align: top;
+          @include for-medium-desktop{
+            padding: size(15) size(7);
+          }
+        }
+        .MuiFormControl-root{
+          min-width: 120px;
+        }
+        .product-dropdown{
+          min-width: 190px;
+          @include for-medium-desktop{
+            min-width: 168px;
+          }
+          @include for-large-tablet{
+            min-width: 155px;
+          }
+        }
+        .MuiAutocomplete-root{
+          min-width: 190px;
+        }
+
+        &:last-child {
+          .MuiTableCell-root {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+  .salePurchase_table {
+    overflow-x: auto;
+  }
+
+  .price-distribution {
+    padding: size(20);
+    background-color: var(--bs-table-header);
+    max-width: 100%;
+    @include for-medium-desktop {
+      padding: size(15);
+    }
+    @include for-large-tablet {
+      padding: size(12);
+    }
+    ul {
+      max-width: 100%;
+      overflow: auto;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: size(8) size(0);
+        width: 530px;
+        max-width: 100%;
+        @include for-medium-desktop{
+          width: 430px;
+        }
+        h6 {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.add-item-link {
+  font-weight: 600;
+  color: var(--bs-nav-color);
+}
+
+@include for-mobile-device {
+  .MuiPaper-root {
+    .MuiMenu-list {
+      li {
+        min-height: auto;
+        padding: 6px 10px;
+        .MuiSvgIcon-root {
+          width: 16px;
+          height: 16px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

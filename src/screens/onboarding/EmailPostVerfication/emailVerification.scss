@@ -1,0 +1,15 @@
+.email-verification-page {
+    background: var(--bs-white);
+    border: 1px solid var(--bs-input-border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+    img {
+        width: 120px;
+        margin: 20px auto 40px;
+        max-width: 100%;
+    }
+}

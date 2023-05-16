@@ -1,0 +1,64 @@
+@import "../../../../scss/mixin";
+
+.page-estimate-invoice {
+    width: size(1060);
+    max-width: 100%;
+    margin: auto;
+    background: var(--bs-white);
+    box-shadow: 0px 2px 8px rgba(150, 150, 150, 0.25);
+    border-radius: size(10);
+
+    .top-info {
+        padding: size(50) size(30) size(40) size(30);
+        border-bottom: 1px solid var(--bs-input-border);
+    }
+
+    .bill-info {
+        padding: size(20) size(30);
+        border-bottom: 1px solid var(--bs-input-border);
+    }
+
+    .prod-info {
+        padding: size(20) size(30) size(40) size(30);
+        border-bottom: 1px solid var(--bs-input-border);
+    }
+
+    .MuiTable-root {
+        .MuiTableRow-head {
+            background: #f8f9fa !important;
+
+            .MuiTableCell-root {
+                color: #757575;
+                font-size: size(14);
+                border-bottom: none;
+            }
+        }
+
+        .MuiTableBody-root {
+            .MuiTableRow-root {
+                .MuiTableCell-root {
+                    font-size: size(18);
+                    border-bottom: 1px solid var(--bs-input-border);
+                }
+            }
+        }
+    }
+
+    ul {
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        width: 450px;
+        margin: 25px 0px 40px auto;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0px;
+
+            h6 {
+                font-weight: 700;
+            }
+        }
+    }
+}

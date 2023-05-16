@@ -1,0 +1,58 @@
+@import "../../../scss/mixin";
+
+
+
+.otp {
+  margin: size(9);
+
+  @include for-mobile-device {
+    margin: size(5);
+  }
+
+  input {
+    @include radius(size(50));
+    @include box-shadow(0 0 size(50) var(--bs-field-shadow));
+    border: 1px solid #d3d3d3;
+    width: size(70) !important;
+    height: size(70) !important;
+    border-radius: 10px;
+    font-size: size(32);
+
+    @include for-average-desktop{
+      width: size(52) !important;
+      height: size(52) !important;
+      font-size: size(18);
+    }
+
+    @include for-mobile-device {
+      width: size(48) !important;
+      height: size(48) !important;
+      font-size: size(16);
+      border-radius: 6px;
+    }
+    @include for-small-mobile-device {
+      width: size(40) !important;
+      height: size(40) !important;
+      font-size: size(14);
+    }
+  }
+}
+
+.code {
+  text-align: center;
+  margin: size(20) 0;
+}
+
+.phoneNoText {
+  text-align: center;
+  font-family: var(--bs-body-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: size(20);
+  line-height: size(24);
+  margin: size(25) 0;
+}
+.recendOtp {
+  cursor: pointer;
+  color: var(--bs-nav-color) !important;
+}

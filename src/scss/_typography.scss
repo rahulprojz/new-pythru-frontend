@@ -1,0 +1,103 @@
+.MuiTypography-root{
+    font-weight: 500;
+}
+.MuiTypography-h1,
+.MuiTypography-h2,
+.MuiTypography-h3,
+.MuiTypography-h4,
+.MuiTypography-h5,
+.MuiTypography-h6 {
+    font-weight: 600 !important;
+}
+@media screen and (max-width: 1560px) {
+    .MuiTypography-h4 {
+        font-size: 26px !important;
+    }
+    .MuiTypography-h5 {
+        font-size: 20px !important;
+    }
+    .MuiTypography-h6 {
+        font-size: 18px !important;
+    }
+    .MuiTypography-body1 {
+        font-size: 17px !important;
+    }
+    .MuiTypography-body2 {
+        font-size: 16px !important;
+    }
+    .MuiTypography-subtitle1 {
+        font-size: 15px !important;
+    }
+    .MuiTypography-subtitle2 {
+        font-size: 13px !important;
+    }
+}
+@media screen and (max-width: 991px) {
+    .MuiTypography-h4 {
+        font-size: 22px !important;
+    }
+    .MuiTypography-h5 {
+        font-size: 18px !important;
+    }
+    .MuiTypography-h6 {
+        font-size: 17px !important;
+    }
+    .MuiTypography-body1 {
+        font-size: 16px !important;
+    }
+    .MuiTypography-body2 {
+        font-size: 15px !important;
+    }
+    .MuiTypography-subtitle1 {
+        font-size: 13px !important;
+    }
+    .MuiTypography-subtitle2 {
+        font-size: 12px !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .MuiTypography-h4 {
+        font-size: 20px !important;
+    }
+    .MuiTypography-h5 {
+        font-size: 17px !important;
+    }
+    .MuiTypography-h6 {
+        font-size: 16px !important;
+    }
+    .MuiTypography-body1 {
+        font-size: 15px !important;
+    }
+    .MuiTypography-body2 {
+        font-size: 14px !important;
+    }
+    .MuiTypography-subtitle1 {
+        font-size: 12px !important;
+    }
+    .MuiTypography-subtitle2 {
+        font-size: 11px !important;
+    }
+}
+@media screen and (max-width: 576px) {
+    .MuiTypography-h4 {
+        font-size: 19px !important;
+    }
+    .MuiTypography-h5 {
+        font-size: 16px !important;
+    }
+    .MuiTypography-h6 {
+        font-size: 15px !important;
+    }
+    .MuiTypography-body1 {
+        font-size: 14px !important;
+    }
+    .MuiTypography-body2 {
+        font-size: 13px !important;
+    }
+    .MuiTypography-subtitle1 {
+        font-size: 11px !important;
+    }
+    .MuiTypography-subtitle2 {
+        font-size: 10px !important;
+    }
+}

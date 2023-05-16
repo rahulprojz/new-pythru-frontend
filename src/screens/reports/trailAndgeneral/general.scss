@@ -1,0 +1,211 @@
+@import "../../../scss/mixin";
+
+.page-report {
+  .MuiAccordion-root {
+    margin-bottom: size(15) !important;
+    border-radius: size(8) !important;
+    box-shadow: none;
+    background: transparent;
+    @include for-mobile-device {
+      margin-bottom: size(5) !important;
+    }
+    &::before {
+      display: none;
+    }
+    &.Mui-expanded {
+      margin: 0 !important;
+    }
+    .MuiAccordionSummary-root {
+      box-shadow: none;
+      padding: size(0);
+      border-radius: size(8);
+      min-height: auto;
+      transform: none;
+      .MuiAccordionSummary-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: size(10) size(20) size(10) size(10);
+        border-radius: size(10);
+        background: var(--bs-white);
+        border: 1px solid var(--bs-img-border);
+      }
+      .MuiSvgIcon-root {
+        border-radius: size(4);
+        border: 1px solid var(--bs-img-border);
+        color: var(--bs-black);
+        background-color: var(--bs-white);
+        padding: size(3);
+        width: size(32);
+        height: size(32);
+        margin-right: size(10);
+      }
+    }
+    .MuiAccordionDetails-root {
+      padding: size(0) size(0) size(0) size(0);
+      ul {
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: size(6) size(0);
+          &:last-child {
+            margin-bottom: size(15);
+          }
+        }
+      }
+    }
+    .MuiAccordionSummary-content {
+      @include for-large-tablet {
+        .MuiAccordionDetails-root {
+          padding: 0px;
+        }
+        .MuiSvgIcon-root {
+          width: 18px !important;
+          height: 18px !important;
+          padding: 0px !important;
+        }
+      }
+    }
+  }
+
+  .table-cover {
+    max-width: 100%;
+    overflow: auto;
+    th {
+      font-size: size(16);
+      color: var(--bs-cellhead);
+      font-weight: 600;
+      padding: size(20) size(5);
+      text-align: left;
+      width: calc(100% / 7);
+      white-space: nowrap;
+      min-width: 120px;
+      &:first-child {
+        padding-left: 53px;
+        @include for-large-tablet{
+          padding-left: 38px;
+        }
+      }
+      &:last-child {
+        text-align: right;
+        padding-right: 10px;
+      }
+      @include for-medium-desktop {
+        font-size: size(14);
+      }
+      @include for-mobile-device {
+        font-size: size(12);
+        padding: size(10) size(5);
+      }
+    }
+    td {
+      text-align: left;
+      width: calc(100% / 7);
+      min-width: 120px;
+      @include for-mobile-device {
+        font-size: size(12);
+        padding: size(10) size(5);
+        h6 {
+          font-size: size(12);
+        }
+      }
+    }
+    &.nested {
+      td {
+        padding: size(10) 5px;
+        @include for-mobile-device {
+          padding: size(5);
+        }
+
+        &:first-child {
+          padding-left: 53px;
+          @include for-large-tablet{
+            padding-left: 38px;
+          }
+        }
+        &:last-child {
+          text-align: right;
+          padding-right: 10px;
+        }
+      }
+    }
+    .subtotal-row {
+      td {
+        background-color: #e4e0f9;
+        &:first-child {
+          padding-left: 53px;
+          border-radius: 5px 0 0 5px;
+          @include for-large-tablet{
+            padding-left: 38px;
+          }
+        }
+        &:last-child {
+          padding-right: 10px;
+          border-radius: 5px 0 0 5px;
+        }
+      }
+    }
+  }
+
+  .profitLossAccordion {
+    h6 {
+      @include for-mobile-device {
+        font-size: 12px !important;
+      }
+    }
+  }
+
+  .node {
+    list-style: none;
+    white-space: nowrap;
+    padding: 4px;
+  }
+  .node.leaf.collapsed {
+    display: none;
+  }
+  .node.disabled > * {
+    color: gray;
+    cursor: not-allowed;
+  }
+  .node.match-in-children.hide .node-label {
+    opacity: 0.5;
+  }
+  .toggle {
+    white-space: pre;
+    margin-right: 4px;
+  }
+  .toggle:after {
+    content: " ";
+  }
+  .toggle.collapsed:after {
+    cursor: pointer;
+    content: "+";
+  }
+  .toggle.expanded:after {
+    cursor: pointer;
+    content: "-";
+  }
+  .searchModeOn .toggle {
+    display: none;
+  }
+  .checkbox-item {
+    vertical-align: middle;
+    margin: 0 4px 0 0;
+  }
+  .checkbox-item.simple-select {
+    display: none;
+  }
+  .total-for-all-acc{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 10px 12px;
+    background: #6F4EF2;
+    border-radius: 10px;
+    max-width: 100%;
+    overflow: auto;
+  }
+}

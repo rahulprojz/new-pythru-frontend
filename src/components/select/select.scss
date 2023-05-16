@@ -1,0 +1,26 @@
+@import "../../scss/mixin";
+
+
+.selectRowPerpage {
+  width: fit-content;
+  height: 39px;
+  background: #ffffff;
+  border: 1px solid #efefef;
+  box-shadow: 0px 25px 50px rgba(132, 39, 225, 0.09);
+  border-radius: 10px;
+  font-size: 16px;
+  & .MuiOutlinedInput-notchedOutline{
+    display: none;
+  }
+  @include for-mobile-device{
+    height: 33px;
+    width: 150px;
+  }
+  @include for-small-mobile-device{
+    height: 30px;
+  }
+}
+
+.options{
+  font-size: size(16);
+}

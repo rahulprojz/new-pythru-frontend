@@ -1,0 +1,273 @@
+// Font Function
+@use "sass:math";
+
+@function size($target, $context: 16) {
+  @return math.div($target, $context) * 1rem;
+}
+
+// Flexbox display
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+  -moz-flex-flow: $flow;
+  -ms-flex-flow: $flow;
+  flex-flow: $flow;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+  -moz-flex-grow: $grow;
+  -ms-flex-grow: $grow;
+  flex-grow: $grow;
+}
+
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+  -moz-flex-shrink: $shrink;
+  -ms-flex-shrink: $shrink;
+  flex-shrink: $shrink;
+}
+
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+  -moz-flex-basis: $width;
+  -ms-flex-basis: $width;
+  flex-basis: $width;
+}
+
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+  -moz-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+  -moz-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}
+
+// Transforms
+@mixin transform($transforms...) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+}
+
+@mixin transition($x...) {
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -ms-transition: $x;
+  -o-transition: $x;
+  transition: $x;
+}
+
+@mixin filter($filter...) {
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  -ms-filter: $filter;
+  -o-filter: $filter;
+  filter: $filter;
+}
+
+@mixin before {
+  position: absolute;
+  content: "";
+}
+
+@mixin beforeBl {
+  @include before;
+  left: 0;
+  bottom: 0;
+}
+
+@mixin beforeLt {
+  @include before;
+  left: 0;
+  top: 0;
+}
+
+@mixin beforeBr {
+  @include before;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin beforeTr {
+  @include before;
+  right: 0;
+  top: 0;
+}
+
+
+
+
+
+// Media Queries
+
+@mixin for-big-desktop {
+  @media screen and (max-width: 1950px) {
+    @content;
+  }
+}
+
+@mixin for-big2-desktop {
+  @media screen and (max-width: 1680px) {
+    @content;
+  }
+}
+
+@mixin for-medium-desktop {
+  @media screen and (max-width: 1560px) {
+    @content;
+  }
+}
+
+@mixin for-average-desktop {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin for-small-desktop {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin for-1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-1100 {
+  @media screen and (max-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin for-large-tablet {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin for-medium-tablet {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin for-small-tablet {
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation : portrait) {
+    @content;
+  }
+}
+
+@mixin for-mobile-device {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin for-small-mobile-device {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin for-small-height {
+  @media screen and (max-height: 650px) {
+    @content;
+  }
+}

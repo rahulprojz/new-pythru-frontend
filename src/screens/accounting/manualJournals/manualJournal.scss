@@ -1,0 +1,143 @@
+@import "../../../scss/mixin";
+
+// filter css
+.node {
+  list-style: none;
+  white-space: nowrap;
+  padding: 4px;
+}
+.node.leaf.collapsed {
+  display: none;
+}
+.node.disabled > * {
+  color: gray;
+  cursor: not-allowed;
+}
+.node.match-in-children.hide .node-label {
+  opacity: 0.5;
+}
+.toggle {
+  white-space: pre;
+  margin-right: 4px;
+}
+.toggle:after {
+  content: " ";
+}
+.toggle.collapsed:after {
+  cursor: pointer;
+  content: "+";
+}
+.toggle.expanded:after {
+  cursor: pointer;
+  content: "-";
+}
+.searchModeOn .toggle {
+  display: none;
+}
+.checkbox-item {
+  vertical-align: middle;
+  margin: 0 4px 0 0;
+}
+.checkbox-item.simple-select {
+  display: none;
+}
+.remove-debit {
+  position: absolute;
+  width: 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  @include for-medium-desktop {
+    width: 25px;
+    margin-top: 12px;
+  }
+  @include for-large-tablet {
+    width: 20px;
+    margin-top: 8px;
+  }
+}
+.preview-table {
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    background-color: var(--bs-table-header);
+    color: #757575;
+    font-size: 14px;
+    padding: 15px 20px;
+    text-align: left;
+    @include for-mobile-device {
+      font-size: 12px;
+      padding: 7px 7px;
+    }
+  }
+  td {
+    padding: 14px 20px;
+    font-size: 16px;
+    text-align: left;
+    @include for-mobile-device {
+      font-size: 12px;
+      padding: 7px 7px;
+    }
+  }
+  tr {
+    &:last-child {
+      td {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+span .rc-tree-select-selection__clear {
+  display: none;
+}
+.preview-transaction-dialog-cover {
+  .close {
+    position: absolute;
+    right: -40px;
+    top: size(10);
+    width: size(40);
+    height: size(40);
+    padding: 0px;
+    min-width: auto;
+    border-radius: 0px 12px 12px 0px;
+    background-color: #f0142f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include for-mobile-device {
+      right: -30px;
+      width: size(30);
+      height: size(30);
+      border-radius: 0px 6px 6px 0px;
+      svg {
+        width: 20px;
+      }
+    }
+    @include for-small-mobile-device {
+      right: -25px;
+      width: size(25);
+      height: size(25);
+      top: size(12);
+    }
+  }
+  .MuiDialog-container {
+    & > .MuiPaper-root {
+      overflow: inherit;
+      max-width: 80%;
+    }
+  }
+  .MuiDialogContent-root {
+    padding: 0px;
+    overflow: inherit;
+  }
+  .dialog-cover {
+    padding: 0px 24px 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 65px);
+  }
+}

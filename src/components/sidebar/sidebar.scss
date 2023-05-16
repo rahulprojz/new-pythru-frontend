@@ -1,0 +1,118 @@
+@import "../../scss/mixin";
+
+.listContainer {
+  .MuiListItem-root {
+    padding: size(10) 0;
+
+    .nvBx {
+      display: block;
+      padding: 0 size(14);
+      width: 100%;
+      position: relative;
+      @include flexbox;
+      @include align-items(center);
+      cursor: pointer;
+      color: var(--bs-secondary-black);
+
+      .MuiListItemIcon-root {
+        min-width: auto;
+        width: size(40);
+        height: size(40);
+        @include flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+        @include radius(size(10));
+        background-color: var(--bs-nav-icon);
+        margin-right: size(10);
+
+        @include for-medium-desktop {
+          width: size(36);
+          height: size(36);
+        }
+        @include for-medium-tablet {
+          width: size(32);
+          height: size(32);
+        }
+        @include for-mobile-device {
+          width: size(28);
+          height: size(28);
+        }
+        @include for-small-mobile-device {
+          width: size(24);
+          height: size(24);
+          img{
+            width: 55%;
+          }
+        }
+      }
+
+      &.active {
+        color: var(--bs-nav-color);
+
+        .MuiListItemIcon-root {
+          background: var(--bs-btn-gradient);
+
+          img {
+            @include filter(brightness(0) invert(1));
+          }
+        }
+      }
+
+      .nv_icon {
+        position: absolute;
+        right: size(10);
+        // top: size(10);
+      }
+
+      .MuiButton-root {
+        width: 100%;
+        padding: size(10) size(10) size(10) size(18);
+        @include justify-content(flex-start);
+
+        .MuiSvgIcon-root {
+          font-size: size(22);
+        }
+      }
+    }
+    .add-icon{
+      margin-left: auto;
+    }
+  }
+
+  > .navi_dp {
+    &:last-child {
+      position: fixed;
+      bottom: size(10);
+      width: size(259);
+      z-index: 2;
+      @include transition(width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms);
+      .MuiListItemIcon-root {
+        background: var(--bs-btn-gradient);
+        img {
+          @include filter(brightness(0) invert(1));
+        }
+      }
+    }
+  }
+
+  .inside_nv_list {
+    padding-left: size(50);
+    padding-bottom: size(10);
+
+    .MuiListItem-root {
+      padding: 0;
+
+      .nvBx {
+        padding: size(10) size(10);
+
+        .nv_icon {
+          top: size(5);
+        }
+      }
+    }
+
+    .inside_nv_list {
+      padding-left: size(10);
+    }
+  }
+}

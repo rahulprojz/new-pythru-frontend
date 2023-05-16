@@ -1,0 +1,15 @@
+@import "../../../scss/mixin";
+
+
+.thanksSmile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  p {
+    text-align: center;
+    font-size: size(24);
+    line-height: 1.67;
+    color: var(--bs-gray-txt);
+  }
+}

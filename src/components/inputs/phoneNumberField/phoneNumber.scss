@@ -1,0 +1,21 @@
+@import "../../../scss/mixin";
+
+.ph_code {
+    font-size: size(16);
+    padding: 0 size(15) 0 size(10);
+    border-right: 1px solid var(--bs-secondary-black);
+    line-height: 1.5;
+    white-space: nowrap;
+
+    @include for-medium-desktop {
+        font-size: size(14);
+    }
+
+    @include for-large-tablet {
+        font-size: size(13);
+    }
+
+    @include for-mobile-device {
+        font-size: size(12);
+    }
+}

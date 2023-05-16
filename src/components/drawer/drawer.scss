@@ -1,0 +1,204 @@
+@import "../../scss/mixin";
+
+.MuiDrawer-paper {
+    max-width: 100%;
+}
+.drawer_wrap {
+    width: size(840);
+    max-width: 100%;
+    position: relative;
+    &.small-drawer {
+        width: size(700);
+    }
+    .drawer_wrap_content {
+        padding: size(30);
+        overflow: auto;
+        max-height: 100vh;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    @include for-medium-desktop {
+        width: size(720);
+        .drawer_wrap_content {
+            padding: size(20);
+        }
+    }
+    @include for-large-tablet {
+        width: size(600);
+        .drawer_wrap_content {
+            padding: size(15);
+        }
+    }
+
+    .close {
+        position: fixed !important;
+        margin: 10px 0px 0px -40px;
+        width: size(40);
+        min-width: auto;
+        border-radius: 12px 0px 0px 12px;
+        background-color: #f0142f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.for-mob {
+            display: none;
+        }
+        @include for-mobile-device {
+            right: size(10);
+            top: size(10);
+            left: auto;
+            margin: 0px;
+            width: size(30);
+            height: size(30);
+            border-radius: 6px;
+            position: absolute !important;
+            svg {
+                width: 20px;
+            }
+            &.for-mob {
+                display: flex;
+            }
+            &.for-desktop {
+                display: none;
+            }
+        }
+        @include for-small-mobile-device {
+            width: size(25);
+            height: size(25);
+            top: size(12);
+        }
+    }
+
+    .hd {
+        font-size: size(24);
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 30px;
+        margin-bottom: size(40);
+        border-bottom: 1px solid var(--bs-border);
+        @include for-medium-desktop {
+            font-size: size(20);
+            padding-bottom: 20px;
+        }
+        @include for-mobile-device {
+            font-size: size(18);
+            margin-bottom: size(10);
+        }
+    }
+
+    &.notificationDrawer {
+        width: size(550);
+
+        .niti_header {
+            padding: 0px 20px 20px;
+            margin: 0px -20px;
+            border-bottom: 1px solid var(--bs-border);
+            @include for-large-tablet {
+                padding: 0px 15px 20px;
+                margin: 0px -15px;
+            }
+            @include for-mobile-device {
+                text-align: center;
+            }
+        }
+
+        .noti_internal_list {
+            max-height: none !important;
+            padding-top: size(15);
+            li {
+                &:first-child {
+                    border-top: 0;
+                }
+
+                .noti_media {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    .MuiAccordionSummary-content {
+        color: var(--bs-cellhead);
+        font-weight: 500;
+        font-size: size(16);
+        margin: 0 !important;
+        @include for-medium-desktop {
+            font-size: size(14);
+        }
+        @include for-large-tablet {
+            font-size: size(12);
+        }
+    }
+
+    .stocks {
+        width: size(240);
+        @include for-medium-desktop {
+            width: size(210);
+        }
+        @media screen and (max-width: 520px) {
+            width: 100%;
+        }
+    }
+
+    &.filterDrawer {
+        width: size(414);
+
+        .hd {
+            font-weight: 600;
+            font-size: size(16);
+            letter-spacing: size(-0.3);
+            color: var(--bs-secondary-black);
+            margin-bottom: 20px;
+            @include for-mobile-device {
+                margin-bottom: 10px;
+            }
+        }
+
+        .MuiPaper-root {
+            @include box-shadow(none);
+
+            &::before {
+                display: none;
+            }
+
+            .MuiAccordionSummary-root,
+            .MuiAccordionDetails-root {
+                padding: 0;
+            }
+        }
+
+        .categoryList {
+            background: var(--bs-white);
+            border: 1px solid #d3d3d3;
+            max-height: size(250);
+            overflow: auto;
+            border-radius: size(10);
+            padding: size(8) size(20);
+            @include for-medium-desktop {
+                padding: size(5.5) size(15);
+            }
+            @include for-large-tablet {
+                padding: size(1) size(12);
+                border-radius: size(5);
+            }
+            .MuiFormControlLabel-root {
+                width: 100%;
+                @include flexbox;
+                @include justify-content(space-between);
+                margin-left: 0;
+            }
+        }
+
+        .MuiAccordion-root {
+            margin-top: 0px;
+        }
+
+        .MuiAccordionSummary-root {
+            transform: none;
+            &.Mui-expanded {
+                min-height: 48px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+@import "../../scss/mixin";
+
+.preview-dialog-cover {
+    .close {
+        position: absolute;
+        right: -40px;
+        top: size(10);
+        width: size(40);
+        height: size(40);
+        padding: 0px;
+        min-width: auto;
+        border-radius: 0px 12px 12px 0px;
+        background-color: #f0142f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include for-mobile-device {
+            right: -30px;
+            width: size(30);
+            height: size(30);
+            border-radius: 0px 6px 6px 0px;
+            svg {
+                width: 20px;
+            }
+        }
+        @include for-small-mobile-device {
+            right: -25px;
+            width: size(25);
+            height: size(25);
+            top: size(12);
+        }
+    }
+    .MuiDialog-container {
+        & > .MuiPaper-root {
+            overflow: inherit;
+            max-width: 80%;
+        }
+    }
+
+    .MuiDialogContent-root {
+        padding: 0px;
+        overflow: inherit;
+    }
+}
+.preview-dialog {
+    padding: 20px 24px;
+    overflow-y: auto;
+    max-height: calc(100vh - 65px);
+    @include for-medium-desktop {
+        padding: 20px;
+    }
+    @include for-mobile-device {
+        padding: 15px;
+    }
+    .bl {
+        color: var(--bs-secondary-black);
+        &.amount-in-words {
+            margin-top: 1px;
+            @include for-mobile-device {
+                margin-top: 5px;
+                width: 100%;
+            }
+        }
+    }
+
+    .color-label {
+        &.lbl {
+            font-weight: 400 !important;
+
+            &.white-space {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .priview_accordian {
+        box-shadow: none;
+
+        &::before {
+            display: none;
+        }
+
+        .MuiAccordionSummary-root {
+            min-height: auto !important;
+            transform: none !important;
+            background: var(--bs-table-header);
+
+            .Mui-expanded {
+                margin: size(12) 0 !important;
+            }
+        }
+
+        .MuiAccordionDetails-root {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
+    .Dflex {
+        &.al-tp {
+            .lbl{
+                margin-right: 5px;
+            }
+            @include for-small-desktop {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+.history-table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+
+    th {
+        color: #757575;
+        padding: 15px 20px;
+        background-color: #f8f9fa;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        @include for-medium-desktop {
+            padding: size(12) size(15);
+            font-size: size(12);
+        }
+
+        @include for-large-tablet {
+            padding: size(8) size(10);
+            font-size: size(11);
+        }
+    }
+
+    td {
+        font-size: 16px;
+        padding: 15px 20px;
+        border-bottom: 1px solid #e5e5e5;
+        @include for-medium-desktop {
+            padding: size(12) size(15);
+            font-size: size(14);
+        }
+
+        @include for-large-tablet {
+            padding: size(8) size(10);
+            font-size: size(12);
+        }
+    }
+}

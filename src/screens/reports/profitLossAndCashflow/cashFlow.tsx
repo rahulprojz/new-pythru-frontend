@@ -1,0 +1,284 @@
+import React, { useEffect, useState } from "react";
+import Grid from "@mui/material/Grid";
+import { useNavigate } from "react-router-dom";
+import Breadcrumbs from "../../../components/breadcrumb";
+import "./profitLoss.scss";
+import { updateProfitLoss } from "./profitLossSlice";
+import StockStatus from "../../../components/stock/index";
+import {
+  NET_CASH_FLOW_ICON,
+  EXPENSE_ICON,
+  TOTAL_INCOME_ICON,
+  DONUT_PLACEHOLDER,
+  NODATA_6,
+  calenderIMG,
+} from "../../../constants";
+import { getFilterFormtedDate, convertIntegerToDecimal } from "../../../utils";
+import { IncomeAnalyticsOptions } from "./chartOptions";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
+import HighchartsVariable from "highcharts/modules/variable-pie";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+
+import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
+import "react-datepicker/dist/react-datepicker.css";
+import Typography from "@material-ui/core/Typography";
+import { getCashflowData } from "./action";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+HighchartsVariable(Highcharts);
+
+Highcharts.setOptions({
+  lang: {
+    thousandsSep: "",
+  },
+});
+
+const graphColor = [
+  "#3C00F2",
+  "#64B3F4",
+  "#FF9913",
+  "#96C93D",
+  "#F0142F",
+  "#00B09B",
+  "#CAC531",
+  "#B5B5B5",
+  "#EC38BC",
+  "#135058",
+  "#B06AB3",
+  "#91EAE4",
+  "#E8CBC0",
+  "#CB356B",
+  "#9CECFB",
+  "#FFE47A",
+  "#26A0DA",
+];
+const placeHplderColor = [
+  "sales",
+  "other-income",
+  "commission",
+  "interest",
+  "uncategorized-income",
+  "refunds",
+  "bank-interest",
+  "profit-on-sale",
+  "fuel",
+  "accounting-fee",
+  "bank-charges",
+  "cost-of-goods-sold",
+  "travel-lodging",
+  "uncategorized-expense",
+  "miscellaneous-expenses",
+  "depreciation",
+  "accounting-fee1",
+];
+function Index() {
+  const navigate = useNavigate();
+  const dispatch: any = useDispatch();
+  //const [state, setState] = React.useState(false);
+  useEffect(() => {
+    document.title = "Cash Flow | PyThru";
+    const newDate = new Date();
+    var firstDay = new Date(newDate.getFullYear(), newDate.getMonth(), 1);
+    dispatch(
+      updateProfitLoss({
+        fromDate: getFilterFormtedDate(firstDay),
+        toDate: getFilterFormtedDate(newDate),
+      })
+    );
+    dispatch(getCashflowData());
+    setDateRange([firstDay, newDate]);
+  }, []);
+  const { profitLossList } = useSelector((state: any) => state.profitLossSlice);
+  const [dateRange, setDateRange]: any = useState([null, null]);
+  const [startDate, endDate] = dateRange;
+
+  // const [startDate, setStartDate]: any = useState(new Date());
+  // const [isOpen, setIsOpen] = useState(false);
+  // const handleChange = (e: any) => {
+  //   setIsOpen(!isOpen);
+  //   setStartDate(e);
+  // };
+  // const handleClick = (e: any) => {
+  //   e.preventDefault();
+  //   setIsOpen(!isOpen);
+  // };
+  return (
+    <div className="page-profitLoss">
+      <Breadcrumbs />
+      <div className="stockContainer Dflex al-cnt m-b-20">
+        <StockStatus
+          stockImg={TOTAL_INCOME_ICON}
+          text="Money In"
+          stvalue={`${
+            convertIntegerToDecimal(profitLossList?.totalMoneyIn) || 0
+          }`}
+          classname="flex-wrap paid square-icon-without-effect"
+        />
+        <StockStatus
+          stockImg={EXPENSE_ICON}
+          text="Money Out"
+          stvalue={`${
+            convertIntegerToDecimal(profitLossList?.totalMoneyOut) || 0
+          }`}
+          classname="flex-wrap due square-icon-without-effect"
+        />
+        <StockStatus
+          stockImg={NET_CASH_FLOW_ICON}
+          text="Net Cash Flow"
+          stvalue={`${
+            convertIntegerToDecimal(
+              profitLossList?.totalMoneyIn - profitLossList?.totalMoneyOut
+            ) || 0
+          }`}
+          classname="flex-wrap transactions square-icon-without-effect"
+        />
+      </div>
+
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6} md={5} lg={3.5} xl={2.5}>
+              <div className="filterDate">
+                <i>
+                  <img src={calenderIMG} alt="" />
+                </i>
+                <DatePicker
+                  dateFormat="dd-MM-yyyy"
+                  selectsRange={true}
+                  startDate={startDate}
+                  endDate={endDate}
+                  placeholderText="Select Date Range"
+                  onChange={(update: any) => {
+                    setDateRange(update);
+                    if (!update.includes(null)) {
+                      dispatch(
+                        updateProfitLoss({
+                          fromDate: getFilterFormtedDate(update[0]),
+                          toDate: getFilterFormtedDate(update[1]),
+                        })
+                      );
+                      dispatch(getCashflowData());
+                    } else if (!update[0] && !update[1]) {
+                      dispatch(
+                        updateProfitLoss({
+                          fromDate: "",
+                          toDate: "",
+                        })
+                      );
+                      dispatch(getCashflowData());
+                    }
+                  }}
+                  isClearable={true}
+                  maxDate={new Date()}
+                />
+              </div>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item sm={12} lg={6}>
+          <div className="bg-white h-100">
+            <Typography variant="body2" className="m-b-20 bold">
+              Money In
+            </Typography>
+            {profitLossList?.moneyIn?.length ? (
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6} lg={12} xl={7}>
+                  {profitLossList?.moneyIn?.length ? (
+                    <HighchartsReact
+                      highcharts={Highcharts}
+                      options={IncomeAnalyticsOptions(
+                        profitLossList?.moneyIn,
+                        graphColor,
+                        "Money In"
+                      )}
+                    />
+                  ) : (
+                    <img src={DONUT_PLACEHOLDER} alt="donut_placeholder" />
+                  )}
+                </Grid>
+                <Grid item xs={12} sm={6} lg={12} xl={5}>
+                  <ul>
+                    {profitLossList?.moneyIn?.length ? (
+                      profitLossList?.moneyIn.map((data: any, i: number) => (
+                        <li className={`${placeHplderColor[i]}`} key={i}>
+                          <Typography variant="subtitle2">
+                            {data?.category}
+                          </Typography>
+
+                          <Typography variant="subtitle2" className="semi-bold">
+                            {convertIntegerToDecimal(data?.amount)}
+                          </Typography>
+                        </li>
+                      ))
+                    ) : (
+                      <></>
+                    )}
+                  </ul>
+                </Grid>
+              </Grid>
+            ) : (
+              <div className="no_data_fnd">
+                <img src={NODATA_6} className="pointer" />
+                <i>Oops!</i>
+                <p>There is nothing here yet!</p>
+              </div>
+            )}
+          </div>
+        </Grid>
+        <Grid item sm={12} lg={6}>
+          <div className="bg-white h-100">
+            <Typography variant="body2" className="m-b-20 bold">
+              Money Out
+            </Typography>
+            {profitLossList?.moneyOut?.length ? (
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6} lg={12} xl={7}>
+                  {profitLossList?.moneyIn?.length ? (
+                    <HighchartsReact
+                      highcharts={Highcharts}
+                      options={IncomeAnalyticsOptions(
+                        profitLossList?.moneyOut,
+                        graphColor,
+                        "Money Out"
+                      )}
+                    />
+                  ) : (
+                    <img src={DONUT_PLACEHOLDER} alt="donut_placeholder" />
+                  )}
+                </Grid>
+                <Grid item xs={12} sm={6} lg={12} xl={5}>
+                  <ul>
+                    {profitLossList?.moneyOut?.length ? (
+                      profitLossList?.moneyOut.map((data: any, i: number) => (
+                        <li className={`${placeHplderColor[i]}`} key={i}>
+                          <Typography variant="subtitle2">
+                            {data?.category}
+                          </Typography>
+                          <Typography variant="subtitle2" className="semi-bold">
+                            {convertIntegerToDecimal(data?.amount)}
+                          </Typography>
+                        </li>
+                      ))
+                    ) : (
+                      <></>
+                    )}
+                  </ul>
+                </Grid>
+              </Grid>
+            ) : (
+              <div className="no_data_fnd">
+                <img src={NODATA_6} className="pointer" />
+                <i>Oops!</i>
+                <p>There is nothing here yet!</p>
+              </div>
+            )}
+          </div>
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
+export default Index;

@@ -1,0 +1,73 @@
+@import "./../../../scss/mixin";
+
+.page-accounts-chart {
+    .sub-account-head {
+        background: var(--bs-btn-gradient);
+        padding: size(25) size(12) size(25) size(20);
+        border-radius: size(10);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: size(20);
+        @include for-medium-desktop {
+            padding: size(15) size(10) size(15) size(15);
+        }
+    }
+    .MuiAccordion-root {
+        margin-bottom: size(15) !important;
+        border-radius: size(8) !important;
+        border: 1px solid var(--bs-nav-icon);
+        box-shadow: none;
+        &::before {
+            display: none;
+        }
+        .MuiAccordionSummary-root {
+            box-shadow: 0px 29px 30px rgba(0, 9, 58, 0.03);
+            padding: size(20) size(10) size(20) size(20);
+            border-radius: size(8);
+            border: 1px solid var(--bs-nav-icon);
+            transform: none;
+            @include for-medium-desktop {
+                padding: size(10) size(5) size(10) size(10);
+            }
+            .MuiAccordionSummary-content {
+                margin: 0;
+            }
+            .MuiSvgIcon-root {
+                color: var(--bs-black);
+                @include for-medium-desktop {
+                    font-size: 20px;
+                }
+            }
+        }
+        .MuiAccordionDetails-root {
+            @include for-medium-desktop {
+                padding: 5px 10px 15px;
+            }
+            ul {
+                padding-left: size(20);
+                @include for-medium-desktop {
+                    padding-left: size(15);
+                }
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: size(7) size(0);
+                    position: relative;
+                    &::before {
+                        content: "";
+                        width: size(5);
+                        height: size(5);
+                        border-radius: size(3);
+                        position: absolute;
+                        background-color: var(--bs-black);
+                        left: size(-13);
+                        top: size(16);
+                    }
+                }
+            }
+        }
+    }
+}

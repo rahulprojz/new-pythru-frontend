@@ -1,0 +1,223 @@
+@import "../../scss/mixin";
+
+.page-banking {
+  .sticky {
+    position: sticky;
+    top: 50px;
+    height: fit-content;
+  }
+  a {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bs-btn-gradient);
+    svg {
+      width: 18px;
+      height: 18px;
+      font-size: 18px;
+      color: var(--bs-white);
+    }
+    &.pending {
+      background: var(--bs-pending);
+      svg {
+        color: var(--bs-white);
+      }
+    }
+    &.white {
+      background: var(--bs-white);
+      svg {
+        color: var(--bs-nav-color);
+      }
+    }
+  }
+  .connect-now-card {
+    align-items: stretch;
+    div {
+      flex: 1;
+      padding-right: 20px;
+    }
+    img {
+      height: 80px;
+      width: auto;
+    }
+  }
+  .virtual-account-card {
+    color: var(--bs-white);
+    padding: 15px;
+    border-radius: 10px;
+    background-image: url("./../../assets/images/virtual-card-bg.png");
+    background-size: cover;
+    background-position: right bottom;
+  }
+  .connected-account-card {
+    padding: 15px;
+    background-image: url("./../../assets/images/connected-card-bg.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 90px;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    &.selected {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#2a5f85, 0.33);
+        border-radius: 10px;
+      }
+    }
+  }
+  .btn-small {
+    height: auto;
+    text-transform: none;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+  }
+  .account-head {
+    background: var(--bs-btn-gradient);
+    color: var(--bs-white);
+    padding: size(25) size(12) size(25) size(20);
+    border-radius: size(10);
+    margin-bottom: size(20);
+    @include for-medium-desktop {
+      padding: size(15) size(10) size(15) size(15);
+    }
+    .card-holder {
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .negative {
+    color: var(--bs-red);
+  }
+  .positive {
+    color: var(--bs-green);
+  }
+  .account-body {
+    padding: 10px 20px;
+  }
+}
+
+.bank-list {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 20px -10px;
+  .single-bank-card {
+    margin: 10px;
+    width: calc(50% - 20px);
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      border-color: var(--bs-nav-color);
+      transform: scale(1.05);
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.add-your-bank-drawer {
+  iframe {
+    width: 100%;
+    height: 530px;
+  }
+}
+
+.activate-now {
+  width: 520px;
+  margin: auto;
+  text-align: center;
+  .bank-image-cover {
+    img {
+      max-width: 80%;
+      width: auto;
+      margin: auto;
+    }
+  }
+  ul {
+    li {
+      padding: 14px 10px;
+      background: #f4f4f4;
+      width: 350px;
+      max-width: 100%;
+      margin: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+.bg-gray {
+  background: #f3f3f3;
+  border-radius: 10px;
+  padding: 10px;
+}
+.self-withdrawl {
+  ul {
+    li {
+      padding: 10px 0px;
+    }
+  }
+}
+
+.link-account-modal {
+  .dialog-cover {
+    overflow-y: auto;
+    max-height: 90vh;
+    padding: 24px;
+  }
+  .close {
+    position: absolute;
+    right: -40px;
+    top: size(10);
+    width: size(40);
+    height: size(40);
+    padding: 0px;
+    min-width: auto;
+    border-radius: 0px 12px 12px 0px;
+    background-color: #f0142f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include for-mobile-device {
+      right: -30px;
+      width: size(30);
+      height: size(30);
+      border-radius: 0px 6px 6px 0px;
+      svg {
+        width: 20px;
+      }
+    }
+    @include for-small-mobile-device {
+      right: -25px;
+      width: size(25);
+      height: size(25);
+      top: size(12);
+    }
+  }
+}
+
+.for-banking{
+  .MuiBadge-badge{
+    right: 0px;
+  }
+}

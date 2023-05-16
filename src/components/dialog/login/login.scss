@@ -1,0 +1,214 @@
+@import "../../../scss/mixin";
+
+.lg_dialog_frm {
+  &.dark_backdrop {
+    .MuiBackdrop-root {
+      background-color: transparent;
+      backdrop-filter: blur(4px);
+    }
+  }
+  .MuiPaper-root {
+    @include radius(size(10));
+    max-width: size(500);
+
+    @include for-mobile-device {
+      margin: 0 size(15);
+    }
+  }
+
+  .loginForm {
+    background: #ffffff;
+    border: 1px solid #efefef;
+    box-shadow: 0px 25px 50px rgba(132, 39, 225, 0.09);
+    border-radius: 10px;
+    padding: 20px 50px;
+    text-align: center;
+
+    @include for-mobile-device {
+      padding: size(20);
+    }
+
+    h6 {
+      color: var(--bs-cellhead);
+    }
+
+    .heading {
+      // font-family: "Lato";
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: size(16);
+      line-height: size(19);
+      text-align: center;
+      color: #111f72;
+      margin-bottom: size(30);
+
+      span {
+        display: block;
+      }
+    }
+
+    .lg_pop_trm {
+      color: var(--bs-gray-txt);
+      text-align: left;
+    }
+
+    .user_img {
+      width: size(100) !important;
+      height: size(100) !important;
+      margin: 0 auto size(30) !important;
+
+      @include for-mobile-device {
+        width: size(50) !important;
+        height: size(50) !important;
+        margin: 0 auto size(10) !important;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid #eceff1;
+      }
+    }
+
+    .email {
+      font-size: size(16);
+      line-height: size(19);
+      margin-bottom: size(46);
+      font-weight: 400;
+
+      @include for-mobile-device {
+        font-size: size(14);
+      }
+    }
+
+    .terms_text {
+      font-size: size(14);
+      line-height: size(17);
+      color: #949494;
+      font-weight: 400;
+      margin: size(15) 0 size(40);
+      text-align: left;
+
+      a {
+        color: #6f4ef2;
+        font-weight: 600;
+      }
+    }
+
+    .login_btn {
+      width: 100% !important;
+      max-width: 300px;
+    }
+
+    .or {
+      display: block;
+      margin: size(25) 0 size(15);
+      font-size: size(16);
+      line-height: size(19);
+      text-align: center;
+      color: #161b2f;
+    }
+
+    .MuiInputBase-root {
+      img {
+        margin-left: size(10);
+      }
+    }
+
+    .MuiInputAdornment-positionEnd {
+      img {
+        @include for-mobile-device {
+          width: size(24);
+        }
+      }
+    }
+
+    .link {
+      font-weight: 600;
+      font-size: size(16);
+      line-height: size(19);
+      color: #6f4ef2;
+      display: block;
+      margin: size(30) 0 size(36);
+    }
+
+    .googleBtn {
+      color: var(--bs-gray-txt);
+      margin: 0 auto;
+      display: flex;
+      border-radius: 10px;
+      font-family: var(--bs-body-font-family);
+      text-transform: capitalize;
+      font-size: size(16);
+      font-weight: 400;
+      padding: size(10) size(20);
+      @include for-medium-desktop {
+        font-size: size(15);
+        padding: size(9) size(18);
+      }
+
+      @include for-medium-tablet {
+        font-size: size(14);
+        padding: size(8) size(16);
+      }
+
+      @include for-mobile-device {
+        font-size: size(13);
+        padding: size(7) size(14);
+        border-radius: 6px;
+      }
+
+      @include for-small-mobile-device {
+        font-size: size(12);
+        padding: size(6) size(12);
+      }
+    }
+
+    .text_nav {
+      color: var(--bs-nav-color);
+      margin: size(30) auto size(10);
+      display: table;
+      font-size: size(16);
+    }
+
+    .srtName {
+      background: var(--bs-btn-gradient);
+      color: var(--bs-white);
+      width: size(60);
+      height: size(60);
+      @include radius(50%);
+      overflow: hidden;
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+      font-size: size(18);
+      margin-right: size(10);
+      text-transform: uppercase;
+
+      @include for-medium-desktop {
+        width: size(50);
+        height: size(50);
+        font-size: size(17);
+      }
+
+      @include for-medium-tablet {
+        width: size(40);
+        height: size(40);
+        font-size: size(16);
+      }
+
+      @include for-mobile-device {
+        width: size(30);
+        height: size(30);
+        font-size: size(14);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

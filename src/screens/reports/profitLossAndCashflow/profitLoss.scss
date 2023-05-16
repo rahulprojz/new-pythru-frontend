@@ -1,0 +1,114 @@
+.page-profitLoss {
+  ul {
+    @media screen and (max-width: 1535px) {
+      padding-left: 25px;
+    }
+    li {
+      position: relative;
+      padding: 10px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 10px;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 10px;
+      }
+      &.sales {
+        &::before {
+          background: #3c00f2;
+        }
+      }
+      &.other-income {
+        &::before {
+          background: #64b3f4;
+        }
+      }
+      &.commission {
+        &::before {
+          background: #ff9913;
+        }
+      }
+      &.interest {
+        &::before {
+          background: #96c93d;
+        }
+      }
+      &.uncategorized-income {
+        &::before {
+          background: #f0142f;
+        }
+      }
+      &.refunds {
+        &::before {
+          background: #00b09b;
+        }
+      }
+      &.bank-interest {
+        &::before {
+          background: #cac531;
+        }
+      }
+      &.profit-on-sale {
+        &::before {
+          background: #b5b5b5;
+        }
+      }
+      &.fuel {
+        &::before {
+          background: #ec38bc;
+        }
+      }
+      &.accounting-fee {
+        &::before {
+          background: #135058;
+        }
+      }
+      &.bank-charges {
+        &::before {
+          background: #b06ab3;
+        }
+      }
+      &.cost-of-goods-sold {
+        &::before {
+          background: #91eae4;
+        }
+      }
+      &.travel-lodging {
+        &::before {
+          background: #ec38bc;
+        }
+      }
+      &.uncategorized-expense {
+        &::before {
+          background: #cb356b;
+        }
+      }
+      &.miscellaneous-expenses {
+        &::before {
+          background: #9cecfb;
+        }
+      }
+      &.depreciation {
+        &::before {
+          background: #ffe47a;
+        }
+      }
+      &.accounting-fee1 {
+        &::before {
+          background: #26a0da;
+        }
+      }
+    }
+  }
+  .bg-white{
+    .no_data_fnd{
+      padding: 50px 0px;
+    }
+  }
+}

@@ -1,0 +1,489 @@
+@import "../../../scss/mixin";
+
+.onboarding_wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 2.1vw;
+
+  @include for-mobile-device {
+    padding-bottom: size(100);
+    overflow: hidden;
+  }
+
+  &::before {
+    @include beforeLt;
+    background: url(../../../assets/images/cloud_upper.svg) no-repeat;
+    width: 55vw;
+    height: 100%;
+    z-index: -1;
+    background-size: contain;
+    @include for-large-tablet {
+      width: 50vw;
+    }
+
+    @include for-mobile-device {
+      width: 129vw;
+    }
+  }
+
+  &::after {
+    @include beforeBl;
+    background: url(../../../assets/images/lower_cloud.svg) no-repeat;
+    width: 50vw;
+    height: 100%;
+    z-index: -1;
+    background-size: contain;
+    background-position: bottom left;
+
+    @include for-large-tablet {
+      width: 40vw;
+    }
+
+    @include for-mobile-device {
+      width: 100vw;
+    }
+  }
+
+  .logo-cover {
+    img {
+      width: 12vw;
+
+      @include for-mobile-device {
+        width: size(120);
+      }
+    }
+  }
+
+  .container {
+    margin: 0 0 0 auto;
+    width: 85%;
+
+    @include for-1100 {
+      width: 95%;
+      .lt {
+        width: 40%;
+      }
+      .rt {
+        .authWrap {
+          width: 100%;
+        }
+      }
+    }
+    @include for-large-tablet {
+      margin: 0;
+      width: 100%;
+    }
+    .lt {
+      width: size(500);
+      text-align: center;
+      @include flex-direction(column);
+      @include align-items(center);
+
+      @include for-medium-desktop {
+        width: size(450);
+      }
+
+      @include for-small-desktop {
+        width: size(400);
+      }
+      @include for-large-tablet {
+        padding: 0px 10px;
+        margin: auto;
+        width: 40vw;
+      }
+
+      @include for-small-tablet {
+        display: none;
+      }
+
+      @include for-mobile-device {
+        display: none;
+      }
+
+      img {
+        width: 14vw;
+      }
+
+      .auth_para {
+        padding-top: size(25);
+        padding-bottom: size(25);
+
+        @include for-medium-desktop {
+          padding-top: size(20);
+          padding-bottom: size(20);
+        }
+
+        @include for-small-desktop {
+          padding-top: size(15);
+          padding-bottom: size(15);
+        }
+
+        h1 {
+          font-weight: 600;
+          font-size: size(30);
+          margin-bottom: size(20);
+
+          @include for-medium-desktop {
+            font-size: size(26);
+          }
+          @include for-small-desktop {
+            font-size: size(22);
+          }
+          @include for-large-tablet {
+            font-size: size(18);
+          }
+        }
+
+        p {
+          color: var(--bs-gray-txt);
+          font-size: size(16);
+          line-height: 1.67;
+
+          @include for-medium-desktop {
+            font-size: size(15);
+          }
+
+          @include for-small-desktop {
+            font-size: size(14);
+          }
+        }
+      }
+    }
+    .rt {
+      @include for-small-tablet {
+        width: 100%;
+      }
+
+      @include for-mobile-device {
+        width: 100%;
+      }
+      .authWrap {
+        width: size(604);
+        background-color: var(--bs-white);
+        padding: size(52);
+        @include box-shadow(var(--bs-shadow));
+        @include radius(size(20));
+        max-width: 38vw;
+        margin-left: auto;
+        
+        @include for-big2-desktop {
+          padding: size(40);
+        }
+        
+        @include for-average-desktop {
+          width: 38vw;
+        }
+        
+        @include for-large-tablet {
+          width: 50vw;
+          max-width: 50vw;
+          padding: size(30) size(20);
+        }
+        @include for-small-tablet {
+          margin: 0 auto;
+        }
+        @include for-mobile-device {
+          max-width: 100%;
+          width: 500px;
+          margin: auto;
+          max-width: 100%;
+          background-color: transparent;
+          @include box-shadow(none);
+          @include radius(0);
+          padding: size(20) size(0);
+        }
+
+        h1 {
+          font-size: size(48);
+          text-align: center;
+          font-weight: 600;
+          margin-bottom: size(25);
+          @include for-medium-desktop {
+            font-size: size(38);
+            margin-bottom: size(20);
+          }
+          @include for-small-desktop {
+            font-size: size(34);
+            margin-bottom: size(15);
+          }
+          @include for-large-tablet {
+            font-size: size(28);
+          }
+        }
+
+        h2 {
+          font-size: size(24);
+          font-weight: 500;
+          text-align: center;
+          line-height: 1.5;
+          font-weight: 500;
+          margin-bottom: size(50);
+
+          @include for-medium-desktop {
+            font-size: size(20);
+            margin-bottom: size(40);
+          }
+          @include for-small-desktop {
+            font-size: size(18);
+            margin-bottom: size(35);
+          }
+          @include for-large-tablet {
+            font-size: size(16);
+            margin-bottom: size(30);
+          }
+        }
+
+        .googleBtn {
+          color: var(--bs-gray-txt);
+          margin: 0 auto;
+          display: flex;
+          @include radius(size(10));
+          font-family: var(--bs-body-font-family);
+          text-transform: capitalize;
+          font-size: size(16);
+          font-weight: 400;
+          padding: size(10) size(20);
+          @include for-medium-desktop {
+            font-size: size(15);
+            padding: size(9) size(18);
+          }
+
+          @include for-medium-tablet {
+            font-size: size(14);
+            padding: size(8) size(16);
+          }
+
+          @include for-mobile-device {
+            font-size: size(13);
+            padding: size(7) size(14);
+            border-radius: 6px;
+          }
+
+          @include for-small-mobile-device {
+            font-size: size(12);
+            padding: size(6) size(12);
+          }
+        }
+
+        .MuiInputBase-root {
+          img {
+            @include for-mobile-device {
+              width: 20px;
+            }
+          }
+        }
+
+        .MuiButtonBase-root {
+          img {
+            margin-right: size(10);
+          }
+        }
+
+        .MuiInputAdornment-positionEnd {
+          img {
+            @include for-medium-desktop {
+              width: size(28);
+            }
+          }
+        }
+
+        .bottomLink {
+          text-align: center;
+          margin-top: size(30);
+          font-size: size(16);
+
+          .text_nav {
+            color: var(--bs-nav-color);
+
+            &:hover {
+              color: var(--bs-secondary-black);
+            }
+          }
+
+          .disableResendOtp {
+            opacity: 0.3;
+            color: var(--bs-resend-disable);
+            text-decoration-line: underline;
+          }
+        }
+
+        .topLink {
+          text-align: center;
+          margin-top: size(10);
+          font-size: size(16);
+
+          .text_nav {
+            color: var(--bs-nav-color);
+          }
+        }
+
+        .authForm {
+          .insideWrap {
+            .checkbox {
+              .Mui-checked {
+                svg {
+                  fill: var(--bs-nav-color);
+                }
+              }
+
+              .MuiTypography-root {
+                font-size: size(16);
+                font-family: var(--bs-body-font-family);
+                font-weight: 400;
+              }
+            }
+
+            .or {
+              font-size: size(16);
+              text-align: center;
+              padding: size(20);
+            }
+
+            .lg_inp {
+              position: relative;
+
+              .pass_info {
+                position: absolute;
+                right: size(10);
+                top: size(17);
+
+                svg {
+                  fill: var(--bs-btn-gradient);
+                }
+
+                .pass_info_wrap {
+                  position: absolute;
+                  left: 100%;
+                  z-index: 9;
+                }
+              }
+            }
+          }
+          &:not(:has(h2)) {
+            h1 {
+              margin-bottom: size(50);
+              @include for-medium-desktop {
+                margin-bottom: size(40);
+              }
+              @include for-small-desktop {
+                margin-bottom: size(35);
+              }
+              @include for-large-tablet {
+                margin-bottom: size(30);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .thanksContaine {
+    width: 100%;
+  }
+
+  .auth-ht-100 {
+    height: auto;
+    min-height: calc(100vh - 120px);
+    @include for-mobile-device {
+      align-items: normal;
+      min-height: inherit;
+    }
+  }
+
+  .auth_header {
+    background-color: transparent !important;
+    display: inline-block;
+    position: absolute;
+    @include for-small-tablet {
+      margin-bottom: size(30);
+    }
+
+    @include for-mobile-device {
+      margin-bottom: size(50);
+      position: inherit;
+    }
+  }
+}
+
+.confirmationCard {
+  width: size(900);
+}
+
+.alignItemCenter {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.passwordCriteria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
+  @include for-mobile-device {
+    margin-top: size(10);
+  }
+
+  img {
+    padding: 5px;
+  }
+
+  .MuiButtonBase-root {
+    padding: 0;
+    min-width: auto;
+
+    img {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .PsCriteria {
+    position: absolute;
+    background: var(--bs-white);
+    padding: size(20);
+    width: size(350);
+    border: 1px solid var(--bs-border);
+    box-shadow: 0px 0px 20px 10px var(--bs-tooltip-shadow);
+    border-radius: 10px;
+    top: calc(100% + size(10));
+    left: -90px;
+    z-index: 1;
+    @include for-medium-desktop {
+      padding: size(15);
+    }
+    @include for-large-tablet {
+      padding: size(12);
+    }
+    @include for-mobile-device {
+      width: size(260);
+      border-radius: 6px;
+      left: -40px
+    }
+
+    ul {
+      @include flexbox;
+      @include flex-direction(column);
+
+      li {
+        color: var(--bs-gray-txt);
+        padding: 5px 0px;
+        list-style-type: disc;
+        list-style: inside;
+        font-size: 14px;
+        width: max-content;
+        @include for-large-tablet {
+          font-size: 12px;
+        }
+        @include for-mobile-device {
+          font-size: 10px;
+          width: auto;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

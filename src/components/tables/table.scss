@@ -1,0 +1,470 @@
+@import "../../scss/mixin";
+
+.table-cover {
+  max-width: 100%;
+  overflow: auto;
+
+  table {
+    width: 100%;
+  }
+}
+
+.search_bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: size(10);
+  width: 410px;
+  max-width: 100%;
+  @include for-mobile-device {
+    width: calc(100% - 10px);
+    margin: size(5);
+  }
+
+  .searchInput {
+    flex: 1;
+  }
+
+  .MuiOutlinedInput-root {
+    .MuiInputBase-input {
+      width: 100%;
+      padding: size(13.5) size(40) size(13.5) size(20) !important;
+      background: var(--bs-white);
+      box-shadow: 0px 4px 8px rgb(185 185 185 / 25%);
+      border-radius: 10px;
+      @include for-medium-desktop {
+        padding: 10px 40px 10px 20px !important;
+        font-size: 14px;
+        line-height: inherit;
+      }
+      @include for-large-tablet {
+        font-size: size(12);
+        padding: size(8) size(30) size(8) size(15) !important;
+      }
+      
+      @include for-mobile-device {
+        border-radius: 6px;
+      }
+      @include for-small-mobile-device {
+        font-size: size(11);
+        padding: size(6) size(30) size(6) size(10) !important;
+      }
+    }
+  }
+  fieldset {
+    border: none;
+  }
+}
+
+.MuiBadge-root {
+  position: relative;
+
+  .filterNv {
+    border: 0;
+    min-width: auto;
+    padding: 0px !important;
+    width: size(50);
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    margin-left: size(15);
+    min-width: auto !important;
+
+    @include for-medium-desktop {
+      width: size(40);
+    }
+    @include for-medium-tablet {
+      width: size(34);
+    }
+    @include for-mobile-device {
+      width: size(30);
+      margin-left: size(5);
+    }
+    @include for-small-mobile-device {
+      width: size(26);
+    }
+
+    .MuiSvgIcon-root{
+      font-size: 24px;
+      @include for-mobile-device {
+        width: size(16);
+      }
+    }
+    .MuiButton-startIcon {
+      margin: 0;
+    }
+  }
+  .MuiBadge-badge {
+    right: -15px;
+    background: #cb2626;
+    left: auto;
+  }
+}
+
+.tableContainer {
+  margin-top: 10px;  
+  .table-filter-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -10px 10px;
+    @include for-mobile-device {
+      margin: 0 -5px 5px;
+    }
+  }
+
+  .paginationDropdown {
+    display: flex;
+    align-items: center;
+    font-family: var(--bs-body-font-family);
+    margin: size(10);
+    font-size: size(16);
+    font-weight: 400;
+    line-height: size(19);
+    .selectRowPerpage {
+      border-radius: 10px !important;
+    }
+    .MuiSelect-select {
+      padding: 7px 30px 7px 15px !important;
+      border-radius: 10px !important;
+    }
+    span{
+      white-space: nowrap;
+    }
+    @include for-medium-desktop {
+      font-size: size(14);
+      
+      .MuiSelect-select {
+        font-size: size(14);
+        border-radius: 6px !important;
+      }
+    }
+    
+    @include for-mobile-device {
+      font-size: size(12);
+      margin: size(5);
+      
+      .MuiSelect-select {
+        font-size: size(12);
+      }
+    }
+    
+    @include for-small-mobile-device {
+      .MuiSelect-select {
+        font-size: size(11);
+      }
+    }
+    
+  }
+
+  .MuiTable-root {
+    border-collapse: separate;
+    border-spacing: 0 size(5);
+    min-width: auto;
+    .MuiTableRow-hover:hover {
+      background-color: rgb(255 255 255);
+      @include box-shadow(0px 4px 8px var(--bs-breadcrum-shadow));
+      @include radius(size(10));
+    }
+
+    .MuiTableCell-head {
+      font-size: size(16);
+      font-weight: 500;
+      padding: size(15) size(5);
+      color: var(--bs-cellhead);
+      border: 0;
+      vertical-align: top;
+      white-space: nowrap;
+
+      &:first-child {
+        padding-left: size(15);
+      }
+
+      svg {
+        width: size(16);
+        fill: var(--bs-cellhead);
+      }
+
+      @include for-medium-desktop {
+        font-size: size(14);
+        padding: size(8) size(4);
+
+        &:first-child {
+          padding-left: size(10);
+        }
+
+        svg {
+          width: size(14);
+        }
+      }
+
+      @include for-mobile-device {
+        font-size: size(12);
+        padding: size(5) size(3);
+
+        &:first-child {
+          padding-left: size(7);
+        }
+
+        svg {
+          width: size(12);
+        }
+      }
+    }
+
+    .MuiTableCell-body {
+      border: 0;
+      padding: size(18) size(5);
+      font-size: size(14);
+      color: var(--bs-cellbody);
+      text-align: left;
+
+      @include for-medium-desktop {
+        padding: size(12) size(5);
+        font-size: size(13);
+      }
+      &:first-child {
+        @include radius(size(10) 0 0 size(10));
+        padding-left: size(15);
+      }
+
+      &:last-child {
+        @include radius(0 size(10) size(10) 0);
+      }
+
+      .pp_img {
+        width: size(40);
+        min-width: size(40);
+        height: size(40);
+        border: 1px solid var(--bs-img-border);
+        @include radius(size(50));
+        margin-right: size(10);
+        overflow: hidden;
+
+        @include for-medium-desktop {
+          width: size(35);
+          height: size(35);
+          min-width: size(35);
+        }
+        
+        @include for-mobile-device {
+          width: size(30);
+          height: size(30);
+          min-width: size(30);
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .color-label {
+        min-width: 120px;
+
+        @include for-medium-desktop {
+          min-width: 100px;
+        }
+
+        @include for-mobile-device {
+          min-width: 80px;
+        }
+
+        &.m-t-5 {
+          @include for-medium-desktop {
+            margin-top: 0px !important;
+          }
+        }
+      }
+
+      .nm {
+        max-width: size(150);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      @include for-medium-desktop {
+        padding: size(8) size(4);
+        font-size: size(12);
+
+        &:first-child {
+          padding-left: size(8);
+        }
+
+        .pp_img {
+          width: size(30);
+          height: size(30);
+          min-width: size(30);
+        }
+      }
+
+      @include for-mobile-device {
+        padding: size(5) size(3);
+        font-size: size(11);
+
+        &:first-child {
+          padding-left: size(5);
+        }
+
+        .pp_img {
+          width: size(25);
+          height: size(25);
+          min-width: size(25);
+        }
+      }
+    }
+  }
+
+  .threedot {
+    background-color: var(--bs-table-dot);
+    width: size(30);
+    height: size(30);
+    min-width: auto;
+
+    @include for-mobile-device {
+      width: size(18);
+      height: size(18);
+
+      svg {
+        width: size(14);
+        height: size(14);
+      }
+    }
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .iconsContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  .td_para {
+    max-width: size(180);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pagination-cover {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: size(5) size(10);
+    background-color: var(--bs-white);
+    border-radius: size(10);
+    margin-top: size(20);
+    box-shadow: 0px 15px 30px rgba(132, 39, 225, 0.09);
+
+    h6 {
+      margin: 5px;
+    }
+
+    nav {
+      margin: 5px;
+    }
+
+    .MuiPagination-ul {
+      .MuiButtonBase-root {
+        color: var(--bs-font-tertiary) !important;
+
+        &.Mui-selected {
+          background: var(--bs-btn-gradient);
+          border: 0;
+          color: var(--bs-white) !important;
+        }
+      }
+    }
+
+    @include for-medium-desktop {
+      padding: size(5) size(10);
+
+      h6 {
+        font-size: 12px;
+      }
+
+      .MuiPagination-ul {
+        .MuiButtonBase-root, .MuiPaginationItem-root {
+          font-size: 10px;
+          width: 20px;
+          white-space: nowrap;
+          height: 20px;
+          min-width: 20px !important;
+        }
+
+        svg {
+          width: 18px;
+        }
+      }
+    }
+
+    @include for-small-mobile-device {
+      padding: size(5) size(10);
+
+      h6 {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.no-record {
+  padding: size(30) size(20) !important;
+  text-align: center;
+  &.MuiTableCell-root{
+    padding-bottom: 0px !important;
+  }
+  img {
+    margin: auto;
+    max-width: 80%;
+    @include for-mobile-device {
+      max-width: 120px;
+    }
+  }
+}
+
+.hideActionSort {
+  th {
+    &:last-child {
+      pointer-events: none !important;
+
+      svg,
+      .MuiBox-root {
+        display: none !important;
+      }
+
+      .MuiButtonBase-root {
+        cursor: default !important;
+      }
+    }
+  }
+}
+
+.no_data_fnd {
+  @include flexbox;
+  margin: 0 auto;
+  @include flex-direction(column);
+  @include align-items(center);
+
+  i {
+    font-weight: 600;
+    font-size: size(20);
+    font-style: normal;
+    margin: size(35) 0 size(15) 0;
+  }
+
+  p {
+    color: var(--bs-gray-txt);
+  }
+}

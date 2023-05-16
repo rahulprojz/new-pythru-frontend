@@ -1,0 +1,68 @@
+@import '../../scss/mixin';
+
+
+.dialog_pop {
+    &.addcategory {
+        .MuiPaper-root {
+            width: size(450);
+
+            h2 {
+                font-size: size(20);
+                text-align: center;
+            }
+
+            .MuiDialogContent-root {
+                padding: size(20) 0 size(20);
+                overflow: inherit;
+            }
+        }
+    }
+
+    .MuiPaper-root {
+        width: size(350);
+        max-width: 100%;
+        @include radius(size(20));
+        padding: size(40);
+        @include flexbox;
+        @include align-items(center);
+        @include flex-direction(column);
+        overflow: auto;
+        @include for-mobile-device {
+            padding: size(30) size(20);
+        }
+
+        .icon {
+            margin-bottom: size(10);
+        }
+
+        h2 {
+            color: var(--bs-cellhead);
+            font-size: size(16);
+            padding-bottom: size(10);
+            padding-top: size(0);
+        }
+
+        p {
+            text-align: center !important;
+            font-size: size(14);
+            margin-bottom: size(20);
+        }
+    }
+
+    &.salesOrder{
+        .MuiPaper-root {
+            width: size(450);
+
+            .MuiDialogContent-root {
+                padding: size(20) 0 size(20);
+            }
+        }   
+    }
+    .MuiDialogContent-root{
+        padding: 0px;
+        overflow: initial;
+    }
+    // .MuiPaper-root{
+
+    // }
+}

@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bs-table-header);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+.leftContent {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}

@@ -1,0 +1,80 @@
+.loginForm {
+  background: #ffffff;
+  border: 1px solid #efefef;
+  box-shadow: 0px 25px 50px rgba(132, 39, 225, 0.09);
+  border-radius: 20px;
+  padding: 20px 50px;
+  text-align: center;
+
+  .heading {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #111f72;
+    margin-bottom: 30px;
+
+    span {
+      display: block;
+    }
+  }
+
+  .user_img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid #eceff1;
+    }
+  }
+
+  .email {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 46px;
+    font-weight: 400;
+  }
+
+  .terms_text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #949494;
+    font-weight: 400;
+    margin: 15px 0 40px;
+    text-align: left;
+
+    a {
+      color: #6f4ef2;
+      font-weight: 600;
+    }
+  }
+
+  .login_btn {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  .or {
+    display: block;
+    margin: 25px 0 15px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #161b2f;
+  }
+
+  .link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6f4ef2;
+    display: block;
+    margin: 30px 0 36px;
+  }
+}

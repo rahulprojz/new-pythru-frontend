@@ -1,0 +1,18 @@
+@import "../../../sass/mixin";
+
+.dateRangePicker {
+	& .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+		border: none;
+	}
+}
+
+.dateRangePickerText {
+	font-size: size(16);
+	font-weight: 400;
+	color: #9b9b9b;
+	line-height: size(19);
+
+	&.css-1at62qq {
+		margin-right: 0;
+	}
+}
